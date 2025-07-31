@@ -215,9 +215,12 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            /* Updated background styling */
+            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), var(--bg-image);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            
         }
         
         .menu-section::before {
@@ -229,7 +232,7 @@
             height: 120px;
             background: var(--gradient-gold);
             border-radius: 0 24px 0 100%;
-            opacity: 0.08;
+            opacity: 0.5;
         }
         
         .menu-section::after {
@@ -239,7 +242,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(245, 231, 231, 0.85);
             z-index: 0;
         }
         
@@ -692,7 +695,7 @@
     <main class="main-content"><main>
         <div class="menu-grid">
             <!-- Section PASTA -->
-    <section id="pasta" class="menu-section" style="background-image: url('https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
+    <section id="pasta" class="menu-section" style="background-image: url('https://spainonafork.com/wp-content/uploads/2023/12/image4-11.png">
     <h2 class="section-title">PASTA</h2>
 
     <div class="menu-item"><div class="item-info"><div class="item-name">Spaghetti Escalope</div></div><div class="item-price">18.000</div></div>
@@ -776,6 +779,8 @@
       <div class="menu-item"><div class="item-info"><div class="item-name">Poele à Viande et Foie</div></div><div class="item-price">38.000</div></div>
       <div class="menu-item special-item"><div class="item-info"><div class="item-name">Grillade Mixte</div>
     </section>
+
+
 
 </body>
 </html>

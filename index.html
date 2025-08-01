@@ -1,6 +1,3 @@
-I'll fix the code to ensure all sections have consistent sizing. The main issues are with the background images and inconsistent styling. Here's the corrected version:
-
-```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -279,6 +276,10 @@ I'll fix the code to ensure all sections have consistent sizing. The main issues
             padding-left: 1rem;
             border-left: 3px solid var(--primary-gold);
             letter-spacing: -0.025em;
+            background-size: cover;
+            background-position: center;
+            height: 70px;
+            opacity: 80%;
         }
         
         .menu-item {
@@ -708,22 +709,22 @@ I'll fix the code to ensure all sections have consistent sizing. The main issues
     <section id="omelette" class="menu-section">
       <h2 class="section-title" style="background-image: url('https://www.healthyfood.com/wp-content/uploads/2018/02/Basic-omelette.jpg')">OMELETTE & SALADES</h2>
 
-      <h3 class="section-subtitle">OMELETTES</h3>
+      <h3 class="section-subtitle" style="background-image: url('https://www.healthyfood.com/wp-content/uploads/2018/02/Basic-omelette.jpg')">OMELETTES</h3>
       <div class="menu-item"><div class="item-info"><div class="item-name">Omelette Jambon</div></div><div class="item-price">9.800</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Omelette Thon</div></div><div class="item-price">10.800</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Omelette 4 fromage</div></div><div class="item-price">13.200</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Omelette Big ben</div></div><div class="item-price">15.000</div></div>
 
-      <h3 class="section-subtitle">SALADES</h3>
+      <h3 class="section-subtitle" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQiSIV8-nq5RSiOgI71g4rjPXpAGE0h6YKEQ&s')">SALADES</h3>
       <div class="menu-item"><div class="item-info"><div class="item-name">Salade Cesar</div></div><div class="item-price">15.000</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Salade Niçoise</div></div><div class="item-price">25.000</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Salade Burrata </div></div><div class="item-price">29.000</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Salade Camembert</div></div><div class="item-price">29.000</div></div>
       
-      <h3 class="section-subtitle">OJJA</h3>
+      <h3 class="section-subtitle" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRRlq3rPHsysb47lq7gLiMt92qvCOWc4mJhQ&s')">OJJA</h3>
       <div class="menu-item"><div class="item-info"><div class="item-name">Ojja escalope</div></div><div class="item-price">18.000</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Ojja fruit de mer</div></div><div class="item-price">27.000</div></div>
-        
+     
     </section>
 
     <!-- Section 5: Plats à Bœuf -->
@@ -768,7 +769,7 @@ I'll fix the code to ensure all sections have consistent sizing. The main issues
 
 <!-- Section 8: Plats à Partager -->
 <section id="partager" class="menu-section">
-  <h2 class="section-title" style="background-image: url('https://media.istockphoto.com/id/1156755023/photo/grilled-tomahawk-ribeye-steak-on-black-stone-plate.jpg?s=1024x1024&w=is&k=20&c=r5lYklWpX_GDfqBxSZj9ZDs3ypcFs4d5Pi7CeXqICto=')">PLATS À PARTAGER</h2>
+  <h2 class="section-title" style="background-image: url('https://media.istockphoto.com/id/2107361518/fr/photo/steak-tomawahk-sur-planche-de-pierre-noire.jpg?s=612x612&w=0&k=20&c=AJ8Ls3vkoW9hFNO-2wDVaiBBG38RricbVeplmmwizcc=')">PLATS À PARTAGER</h2>
   
   <h3 class="section-subtitle">PLATS</h3>
   <div class="menu-item"><div class="item-info"><div class="item-name">Tomhawk 1kg</div></div><div class="item-price">105.000</div></div>
@@ -916,7 +917,7 @@ I'll fix the code to ensure all sections have consistent sizing. The main issues
 
 <!-- Section 15: Crêpes & Pancakes -->
 <section id="crepe" class="menu-section">
-  <h2 class="section-title" style="background-image: url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">CRÊPES & PANCAKES</h2>
+  <h2 class="section-title" style="background-image: url('https://assets.afcdn.com/recipe/20250128/157770_w1024h576c1cx1130cy1023cxt0cyt0cxb2667cyb1500.webp')">CRÊPES & PANCAKES</h2>
 
 <h3 class="section-subtitle">CRÊPE SUCRÉE</h3>
   <div class="menu-item"><div class="item-info"><div class="item-name">crêpe Chocolat</div></div><div class="item-price">8.000</div></div>
@@ -969,7 +970,7 @@ I'll fix the code to ensure all sections have consistent sizing. The main issues
 
 <!-- Section 17: Baguettes & Sandwiches -->
 <section id="Sandwitches" class="menu-section">
-  <h2 class="section-title" style="background-image: url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">BAGUETTES & SANDWICHES</h2>
+  <h2 class="section-title" style="background-image: url('https://img.cuisineaz.com/660x495/2019/04/17/i146583-tacos-poulet-curry.webp')">BAGUETTES & SANDWICHES</h2>
 
   <h3 class="section-subtitle">BAGUETTE FARCIE</h3>
   <div class="menu-item"><div class="item-info"><div class="item-name">Jambon</div></div><div class="item-price">8.000</div></div>

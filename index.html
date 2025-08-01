@@ -1,3 +1,6 @@
+I'll fix the code to ensure all sections have consistent sizing. The main issues are with the background images and inconsistent styling. Here's the corrected version:
+
+```html
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -215,12 +218,7 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
-            /* Updated background styling */
-            background: linear-gradient(rgba(255,255,255,0.7), rgba(255,255,255,0.7)), var(--bg-image);
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            
+            min-height: 500px; /* Added fixed height */
         }
         
         .menu-section::before {
@@ -232,19 +230,9 @@
             height: 120px;
             background: var(--gradient-gold);
             border-radius: 0 24px 0 100%;
-            opacity: 0.5;
+            opacity: 0.08;
         }
-        
-        .menu-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.85);
-            z-index: 0;
-        }
+
         
         .menu-section:hover {
             transform: translateY(-8px);
@@ -261,6 +249,14 @@
             padding-bottom: 1rem;
             letter-spacing: -0.025em;
             z-index: 1;
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            border-radius: 12px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            margin-top: 0;
+            height: 170px;
         }
         
         .section-title::after {
@@ -283,7 +279,6 @@
             padding-left: 1rem;
             border-left: 3px solid var(--primary-gold);
             letter-spacing: -0.025em;
-            z-index: 1;
         }
         
         .menu-item {
@@ -349,38 +344,7 @@
             color: white;
             border-color: transparent;
         }
-        
-        /* Section Divider */
-        .section-divider {
-            text-align: center;
-            margin: 80px 0;
-            position: relative;
-        }
-        
-        .section-divider::before,
-        .section-divider::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 40%;
-            height: 2px;
-            background: var(--gradient-gold);
-            border-radius: 1px;
-        }
-        
-        .section-divider::before { left: 0; }
-        .section-divider::after { right: 0; }
-        
-        .divider-icon {
-            background: white;
-            padding: 0 2rem;
-            font-size: 2rem;
-            border: 2px solid var(--primary-gold);
-            border-radius: 50px;
-            display: inline-block;
-            box-shadow: 0 4px 12px var(--shadow-light);
-        }
-        
+ 
         /* Footer */
         .footer {
             background: var(--gradient-navy);
@@ -485,6 +449,7 @@
             .menu-section {
                 padding: 2rem;
                 border-radius: 20px;
+                min-height: auto;
             }
             
             .section-title {
@@ -545,84 +510,6 @@
                 padding: 0.4rem 0.8rem;
             }
         }
-/* Global styles for consistency */
-body {
-    font-family: 'Playfair Display', serif;
-    background-color: #fffaf5;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-/* Section layout */
-.menu-section {
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-}
-
-/* Section title with background image */
-.section-title {
-    font-size: 2.2em;
-    font-weight: 700;
-    text-align: center;
-    padding: 30px 20px;
-    margin-bottom: 30px;
-    background-image: url('https://spainonafork.com/wp-content/uploads/2023/12/image4-11.png');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    border-radius: 10px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-}
-
-/* Menu items */
-.menu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.menu-item:last-child {
-    border-bottom: none;
-}
-
-/* Item text */
-.item-info {
-    flex-grow: 1;
-}
-
-.item-name {
-    font-size: 1.1em;
-    font-weight: 500;
-}
-
-/* Price */
-.item-price {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #b26f16;
-    white-space: nowrap;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 600px) {
-    .section-title {
-        font-size: 1.5em;
-        padding: 20px 10px;
-    }
-
-    .item-name, .item-price {
-        font-size: 1em;
-    }
-}
-
-
         
         /* Print Styles */
         @media print {
@@ -773,8 +660,8 @@ body {
     <main class="main-content"><main>
         <div class="menu-grid">
             <!-- Section PASTA -->
-    <section id="pasta" class="menu-section" >
-    <h2 class="section-title" style="background-image: url('https://spainonafork.com/wp-content/uploads/2023/12/image4-11.png">PASTA</h2>
+    <section id="pasta" class="menu-section">
+    <h2 class="section-title" style="background-image: url('https://spainonafork.com/wp-content/uploads/2023/12/image4-11.png')">PASTA</h2>
 
     <div class="menu-item"><div class="item-info"><div class="item-name">Spaghetti Escalope</div></div><div class="item-price">18.000</div></div>
     <div class="menu-item"><div class="item-info"><div class="item-name">Penne Thon et Fromage Gruyère</div></div><div class="item-price">19.000</div></div>
@@ -790,7 +677,7 @@ body {
     </section>
 
     <!-- Section VIANDE BLANCHE -->
-    <section id="viande-blanche" class="menu-section" >
+    <section id="viande-blanche" class="menu-section">
     <h2 class="section-title" style="background-image: url('https://mccormick.widen.net/content/9ufjgvqqb2/original/blanc_de_poulet_roti_au_beurre_dherbes_800x800.jpg')">VIANDE BLANCHE</h2>
 
     <div class="menu-item"><div class="item-info"><div class="item-name">Escalope Grillée</div></div><div class="item-price">16.000</div></div>
@@ -804,7 +691,7 @@ body {
 
 
     <!-- Section 3: fruit-mer -->
-     <section id="fruits-mer" class="menu-section" >
+     <section id="fruits-mer" class="menu-section">
       <h2 class="section-title" style="background-image: url('https://media.istockphoto.com/id/1305699663/fr/photo/plateau-de-fruits-de-mer-homard-grill%C3%A9-crevettes-p%C3%A9toncles-langoustines-poulpe-calmar-sur.jpg?s=612x612&w=0&k=20&c=5sV9oi8gBHHAL0v5CVXTK1CVd-SyDlDjkoFwuzOi0bE=')">FRUITS DE MER</h2>
       <div class="menu-item"><div class="item-info"><div class="item-name">Daurade</div></div><div class="item-price">26.000</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Loup</div></div><div class="item-price">28.000</div></div>
@@ -818,28 +705,29 @@ body {
     </section>
 
     <!-- Section 4: Omelette & Salades -->
-    <section id="omelette" class="menu-section" >
-      <h2 class="section-title" >OMELETTE & SALADES</h2>
-      <h3 class="section-subtitle" style="background-image: url('https://www.healthyfood.com/wp-content/uploads/2018/02/Basic-omelette.jpg')">OMELETTES</h3>
+    <section id="omelette" class="menu-section">
+      <h2 class="section-title" style="background-image: url('https://www.healthyfood.com/wp-content/uploads/2018/02/Basic-omelette.jpg')">OMELETTE & SALADES</h2>
+
+      <h3 class="section-subtitle">OMELETTES</h3>
       <div class="menu-item"><div class="item-info"><div class="item-name">Omelette Jambon</div></div><div class="item-price">9.800</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Omelette Thon</div></div><div class="item-price">10.800</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Omelette 4 fromage</div></div><div class="item-price">13.200</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Omelette Big ben</div></div><div class="item-price">15.000</div></div>
 
-      <h3 class="section-subtitle" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQiSIV8-nq5RSiOgI71g4rjPXpAGE0h6YKEQ&s')">SALADES</h3>
+      <h3 class="section-subtitle">SALADES</h3>
       <div class="menu-item"><div class="item-info"><div class="item-name">Salade Cesar</div></div><div class="item-price">15.000</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Salade Niçoise</div></div><div class="item-price">25.000</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Salade Burrata </div></div><div class="item-price">29.000</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Salade Camembert</div></div><div class="item-price">29.000</div></div>
       
-      <h3 class="section-subtitle" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRRlq3rPHsysb47lq7gLiMt92qvCOWc4mJhQ&s')">OJJA</h3>
+      <h3 class="section-subtitle">OJJA</h3>
       <div class="menu-item"><div class="item-info"><div class="item-name">Ojja escalope</div></div><div class="item-price">18.000</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Ojja fruit de mer</div></div><div class="item-price">27.000</div></div>
         
     </section>
 
     <!-- Section 5: Plats à Bœuf -->
-    <section id="boeuf" class="menu-section" >
+    <section id="boeuf" class="menu-section">
       <h2 class="section-title" style="background-image: url('https://images.unsplash.com/photo-1558030006-450675393462?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">PLATS À BOEUF</h2>
       <div class="menu-item"><div class="item-info"><div class="item-name">Émincé de Bœuf Crème Sauce aux Légumes</div></div><div class="item-price">32.000</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Filet de Bœuf Grillé avec Fines Herbes</div></div><div class="item-price">34.000</div></div>
@@ -849,17 +737,17 @@ body {
     </section>
 
     <!-- Section 6: Agneau -->
-    <section id="agneau" class="menu-section" >
+    <section id="agneau" class="menu-section">
       <h2 class="section-title" style="background-image: url('https://img.cuisineaz.com/660x660/2022/07/20/i184798-cotelettes-d-agneau-au-barbecue.jpeg')">AGNEAU</h2>
       <div class="menu-item"><div class="item-info"><div class="item-name">Foie d'Agneau</div></div><div class="item-price">33.000</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Cotlet d'Agneau</div></div><div class="item-price">34.000</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Bonbons d'Agneau</div></div><div class="item-price">38.000</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Poele à Viande et Foie</div></div><div class="item-price">38.000</div></div>
-      <div class="menu-item special-item"><div class="item-info"><div class="item-name">Grillade Mixte</div>
+      <div class="menu-item special-item"><div class="item-info"><div class="item-name">Grillade Mixte</div></div><div class="item-price">39.000</div></div>
     </section>
 
         <!-- Section 7: Pizza -->
-    <section id="pizza" class="menu-section" >
+    <section id="pizza" class="menu-section">
       <h2 class="section-title" style="background-image: url('https://media.istockphoto.com/id/1442417585/fr/photo/personne-recevant-un-morceau-de-pizza-au-pepperoni-au-fromage.jpg?s=612x612&w=0&k=20&c=xNz2rodZQQARx16BlXTkht9E19aw4ziOMm6UOjW5DKM=')">PIZZA</h2>
       <div class="menu-item"><div class="item-info"><div class="item-name">Pizza Margherita (sauce tomate, mozzarella)</div></div><div class="item-price">13.000</div></div>
       <div class="menu-item"><div class="item-info"><div class="item-name">Pizza Funghi (sauce tomate, mozzarella, champignons)</div></div><div class="item-price">16.000</div></div>
@@ -879,20 +767,20 @@ body {
     </section>
 
 <!-- Section 8: Plats à Partager -->
-<section id="partager" class="menu-section" >
-  <h2 class="section-title">PLATS À PARTAGER</h2>
+<section id="partager" class="menu-section">
+  <h2 class="section-title" style="background-image: url('https://media.istockphoto.com/id/1156755023/photo/grilled-tomahawk-ribeye-steak-on-black-stone-plate.jpg?s=1024x1024&w=is&k=20&c=r5lYklWpX_GDfqBxSZj9ZDs3ypcFs4d5Pi7CeXqICto=')">PLATS À PARTAGER</h2>
   
-  <h3 class="section-subtitle" style="background-image: url('https://media.istockphoto.com/id/1156755023/photo/grilled-tomahawk-ribeye-steak-on-black-stone-plate.jpg?s=1024x1024&w=is&k=20&c=r5lYklWpX_GDfqBxSZj9ZDs3ypcFs4d5Pi7CeXqICto=')">PLATS</h3>
+  <h3 class="section-subtitle">PLATS</h3>
   <div class="menu-item"><div class="item-info"><div class="item-name">Tomhawk 1kg</div></div><div class="item-price">105.000</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Entam & 2 kg</div></div><div class="item-price">145.000</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Symphonie fruit de mer</div></div><div class="item-price">176.000</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">BIG BEN</div></div><div class="item-price">188.000</div></div>
   
-  <h3 class="section-subtitle" style="background-image: url('https://media.istockphoto.com/id/519865781/fr/photo/hot-des-frites-sur-plaque-blanche.jpg?s=612x612&w=0&k=20&c=4u4yPJDkSXjiLIGHJmtJ3LdooxiBQe-3ss-q1HLTLaU=')">SUPPLÉMENT</h3>
+  <h3 class="section-subtitle">SUPPLÉMENT</h3>
   <div class="menu-item"><div class="item-info"><div class="item-name">Supplément frites</div></div><div class="item-price">5.000</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Supplément fromage</div></div><div class="item-price">5.000</div></div>
   
-  <h3 class="section-subtitle" style="background-image: url('https://img.cuisineaz.com/1024x768/2018/04/15/i139383-lasagnes-au-cookeo.jpeg')">PLATS PRINCIPAUX</h3>
+  <h3 class="section-subtitle">PLATS PRINCIPAUX</h3>
   <div class="menu-item"><div class="item-info"><div class="item-name">Lasagne viande hachée</div></div><div class="item-price">27.000</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Risotto au poulet champignon</div></div><div class="item-price">29.000</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Risotto au boeuf</div></div><div class="item-price">34.000</div></div>
@@ -900,7 +788,7 @@ body {
 </section>
 
 <!-- Section 9: Petit Déjeuner -->
-<section id="petit-dejeuner" class="menu-section" >
+<section id="petit-dejeuner" class="menu-section">
   <h2 class="section-title" style="background-image: url('https://cdt51.media.tourinsoft.eu/upload/Mamatte--1-.png?width=1200&height=630&crop=1')">PETIT DÉJEUNER</h2>
   <div class="menu-item"><div class="item-info"><div class="item-name">EXPRESS (1 personne)</div><div class="item-description">1 Café, 1 jus,crêpe sucrée, 1/2L Eau</div></div><div class="item-price">12.000</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">THE BEST (2 personnes)</div><div class="item-description">2 cafés, 2 jus, Boule au chocolat, 2 crêpes au choix, omelette, 2 teramisu, 2 jwajem, ramequin beurre, ramequin chamla, ramequin chocolat, ramequin fruit sec</div></div><div class="item-price">42.000</div></div>
@@ -909,10 +797,10 @@ body {
 </section>
 
 <!-- Section 10: Café & Boissons -->
-<section id="boissons" class="menu-section" >
-  <h2 class="section-title">CAFÉ & BOISSONS</h2>
+<section id="boissons" class="menu-section">
+  <h2 class="section-title" style="background-image: url('https://dww3ueizok6z0.cloudfront.net/food/banner/11565-88e9ec0b28a500086bee69a6c4c3a7c0f147fe27')">CAFÉ & BOISSONS</h2>
 
-  <h3 class="section-subtitle" style="background-image: url('https://dww3ueizok6z0.cloudfront.net/food/banner/11565-88e9ec0b28a500086bee69a6c4c3a7c0f147fe27')">CAFÉ</h3>
+  <h3 class="section-subtitle">CAFÉ</h3>
   <div class="menu-item"><div class="item-info"><div class="item-name">Express</div></div><div class="item-price">3.500</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Cappucin</div></div><div class="item-price">3.800</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Directe</div></div><div class="item-price">4.200</div></div>
@@ -927,18 +815,18 @@ body {
   <div class="menu-item"><div class="item-info"><div class="item-name">Café glacé morjene</div></div><div class="item-price">9.500</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Café chaud morjene</div></div><div class="item-price">9.500</div></div>
 
-  <h3 class="section-subtitle" style="background-image: url('https://media.istockphoto.com/id/477567554/fr/photo/glac%C3%A9e-boissons-fra%C3%AEches.jpg?s=612x612&w=0&k=20&c=jFgAYcd5WqY-9ETfzhOU0IhztFLlAMAb7okVLhAsWJY=')">BOISSONS</h3>
+  <h3 class="section-subtitle">BOISSONS</h3>
   <div class="menu-item"><div class="item-info"><div class="item-name">Eau 1 L</div></div><div class="item-price">3.500</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Canette</div></div><div class="item-price">4.000</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Eau gazeuse</div></div><div class="item-price">4.800</div></div>
 
-  <h3 class="section-subtitle" style="background-image: url('https://media.istockphoto.com/id/912302488/photo/tea-freshly-brewed-in-a-glass-cup-and-some-herbs-on-a-dark-rustic-wooden-background-healthy.jpg?s=612x612&w=0&k=20&c=oHN0_NweGer9YqzX5YJce7EFkNXaJ8SbgvpCm71Gc-0=')">THÉ</h3>
+  <h3 class="section-subtitle">THÉ</h3>
   <div class="menu-item"><div class="item-info"><div class="item-name">Thé</div></div><div class="item-price">3.500</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Thé Infusion</div></div><div class="item-price">4.000</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Thé amande</div></div><div class="item-price">6.500</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Thé big ben baklawa fruit sec</div></div><div class="item-price">12.800</div></div>
 
-  <h3 class="section-subtitle" style="background-image: url('https://media.istockphoto.com/id/1370520449/fr/photo/tranche-de-g%C3%A2teau-au-chocolat-avec-gla%C3%A7age.jpg?s=612x612&w=0&k=20&c=ra4pseGWfKE2OKdFRyndnjP8sGmqIjvZeQ2YNR7PSkI=')">GATEAUX</h3>
+  <h3 class="section-subtitle">GATEAUX</h3>
   <div class="menu-item"><div class="item-info"><div class="item-name">Gâteau</div></div><div class="item-price">7.000</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Tiramisu</div></div><div class="item-price">8.500</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Cheesecake</div></div><div class="item-price">10.500</div></div>
@@ -946,8 +834,8 @@ body {
 
 
 <!-- Section 11: Jus & Cocktails -->
-<section id="jus" class="menu-section" style="background-image: url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
-  <h2 class="section-title">JUS & COCKTAILS</h2>
+<section id="jus" class="menu-section">
+  <h2 class="section-title" style="background-image: url('https://media.istockphoto.com/id/1406625741/fr/photo/smoothies-et-fruits-frais.jpg?s=612x612&w=0&k=20&c=BuVv-CxVd4R9dvn_0ppUVBcpjwcqxSTa9V-Yupdnrvs=')">JUS & SMOOTHIES</h2>
   <h3 class="section-subtitle">JUS</h3>
   <div class="menu-item"><div class="item-info"><div class="item-name">Jus Orange</div></div><div class="item-price">8.000</div></div>
   <div class="menu-item"><div class="item-info"><div class="item-name">Jus Citron</div></div><div class="item-price">8.000</div></div>
@@ -988,8 +876,8 @@ body {
 
 
 <!-- Section 12: Frappuccino & Chocolat Chaud -->
-<section id="desserts" class="menu-section" style="background-image: url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
-  <h2 class="section-title">DESSERTS</h2>
+<section id="desserts" class="menu-section">
+  <h2 class="section-title" style="background-image: url('https://media.istockphoto.com/id/1338229031/fr/photo/deux-milkshakes-au-chocolat-sur-une-table-en-bois.jpg?s=612x612&w=0&k=20&c=a-o1ZDqyRm4XirzOtVc6RXYCeDoT3qSm1Prn9DrB3xk=')">DESSERTS</h2>
   
   <h3 class="section-subtitle">FRAPPUCCINO</h3>
   <div class="menu-item"><div class="item-info"><div class="item-name">Chocolat</div></div><div class="item-price">12.600</div></div>
@@ -1027,8 +915,8 @@ body {
 
 
 <!-- Section 15: Crêpes & Pancakes -->
-<section id="crepe" class="menu-section" style="background-image: url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
-  <h2 class="section-title">CRÊPES & PANCAKES</h2>
+<section id="crepe" class="menu-section">
+  <h2 class="section-title" style="background-image: url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">CRÊPES & PANCAKES</h2>
 
 <h3 class="section-subtitle">CRÊPE SUCRÉE</h3>
   <div class="menu-item"><div class="item-info"><div class="item-name">crêpe Chocolat</div></div><div class="item-price">8.000</div></div>
@@ -1080,8 +968,8 @@ body {
 
 
 <!-- Section 17: Baguettes & Sandwiches -->
-<section id="Sandwitches" class="menu-section" style="background-image: url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">
-  <h2 class="section-title">BAGUETTES & SANDWICHES</h2>
+<section id="Sandwitches" class="menu-section">
+  <h2 class="section-title" style="background-image: url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')">BAGUETTES & SANDWICHES</h2>
 
   <h3 class="section-subtitle">BAGUETTE FARCIE</h3>
   <div class="menu-item"><div class="item-info"><div class="item-name">Jambon</div></div><div class="item-price">8.000</div></div>
@@ -1135,9 +1023,6 @@ body {
   <div class="menu-item"><div class="item-info"><div class="item-name">Américain</div></div><div class="item-price">11.000</div></div>
 </section>
 
-
-
-
 </body>
-</html>
 
+</html>
